@@ -1,0 +1,31 @@
+{
+  "URL": "https://elpais.com/opinion/",
+  "API_KEY": "<your_rapidapi_key>",
+  "API_HOST": "google-translate113.p.rapidapi.com",
+  "API_URL": "https://google-translate113.p.rapidapi.com/api/v1/translator/text",
+  "REMOTE_URL": "https://<username>:<access_key>@hub-cloud.browserstack.com/wd/hub",
+  "CAPABILITIES": {
+    "windows": {
+      "browserName": "Chrome",
+      "browserVersion": "latest",
+      "bstack:options": {
+        "os": "Windows",
+        "osVersion": "10",
+        "buildName": "ElPais Suite",
+        "sessionName": "ElPais Windows Chrome Test",
+        "seleniumVersion": "4.14.0"
+      }
+    },
+    "macos": {
+      "browserName": "Safari",
+      "browserVersion": "latest",
+      "bstack:options": {
+        "os": "OS X",
+        "osVersion": "Monterey",
+        "buildName": "ElPais Suite",
+        "sessionName": "ElPais macOS Safari Test",
+        "seleniumVersion": "4.14.0"
+      }
+    }
+  }
+}
