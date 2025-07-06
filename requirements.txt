@@ -1,8 +1,8 @@
 googletrans==4.0.0-rc1
 nltk
+robotframework-pabot
+beautifulsoup4
+requests
 robotframework
 selenium
 robotframework-seleniumlibrary
-robotframework-pabot
-bs4
-requests

@@ -1,9 +1,9 @@
 {
   "URL": "https://elpais.com/opinion/",
-  "API_KEY": "<your_rapidapi_key>",
+  "API_KEY": "67b4acdd51mshe4ece67ac4d2db5p116965jsn0708742557af",
   "API_HOST": "google-translate113.p.rapidapi.com",
   "API_URL": "https://google-translate113.p.rapidapi.com/api/v1/translator/text",
-  "REMOTE_URL": "https://<username>:<access_key>@hub-cloud.browserstack.com/wd/hub",
+  "REMOTE_URL": "https://renjithr_esEkuY:VyW1tTGegzEcKhKxgonV@hub-cloud.browserstack.com/wd/hub",
   "CAPABILITIES": {
     "windows": {
       "browserName": "Chrome",
@@ -12,8 +12,17 @@
         "os": "Windows",
         "osVersion": "10",
         "buildName": "ElPais Suite",
-        "sessionName": "ElPais Windows Chrome Test",
-        "seleniumVersion": "4.14.0"
+        "sessionName": "ElPais Windows Chrome Test"
+      }
+    },
+    "windows_edge": {
+      "browserName": "Edge",
+      "browserVersion": "latest",
+      "bstack:options": {
+        "os": "Windows",
+        "osVersion": "11",
+        "buildName": "ElPais Suite",
+        "sessionName": "ElPais Windows Edge Test"
       }
     },
     "macos": {
@@ -21,10 +30,31 @@
       "browserVersion": "latest",
       "bstack:options": {
         "os": "OS X",
-        "osVersion": "Monterey",
+        "osVersion": "Sonoma",
         "buildName": "ElPais Suite",
-        "sessionName": "ElPais macOS Safari Test",
-        "seleniumVersion": "4.14.0"
+        "sessionName": "ElPais macOS Safari Test"
+      }
+    },
+    "android": {
+      "platformName": "android",
+      "deviceName": "Samsung Galaxy S22",
+      "realMobile": "true",
+      "os_version": "12.0",
+      "browserName": "Chrome",
+      "bstack:options": {
+        "buildName": "ElPais Suite",
+        "sessionName": "ElPais Android Test"
+      }
+    },
+    "ios": {
+      "platformName": "ios",
+      "deviceName": "iPhone 15 Pro",
+      "realMobile": "true",
+      "os_version": "17",
+      "browserName": "Safari",
+      "bstack:options": {
+        "buildName": "ElPais Suite",
+        "sessionName": "ElPais iOS Test"
       }
     }
   }

@@ -60,7 +60,11 @@ Edit the file config/config.json:
 
 open terminal at root folder and run below command
 
-**robot --outputdir results .\tests\test_elpais.robot**
+To run test locally in single platform:
+**robot --outputdir Singlerun .\tests\test_elpais.robot**
+
+To run test parallelly in five platforms across a combination of desktop and mobile browsers:
+**python parallel_runner.py**
 
 **Test will:**
   1. Launch browser on BrowserStack  
@@ -73,19 +77,46 @@ open terminal at root folder and run below command
     a. Translated titles and contents
     b. Word frequency summary
     c. API status
-2. images/article_0.jpg to article_4.jpg – Downloaded images for each article (if found)
+2. images/article_0.jpg to article_4.jpg – Downloaded images for each article (if found).
+3. In case of parallel run, individual results,images and translation logs are generated in the respective platform folders.
 
 ### 5. Sample Output (translation_log.txt)
 
-Translation Log generated at 2025-07-03 21:30:00
-================================================
-✅ API RESPONSE: {'Translated Title': 'Spain's Democracy Faces Crisis'}
-✅ API RESPONSE: {'Translated Content': 'Recent events have pushed the public...'}
-...
-Repeated Meaningful Words:
-democracy: 3
-government: 2
-spain: 2
+Translation log generated at 2025-07-06_22-16-47
+-----------------------------------------------
+
+First five articles in Opinion
+==============================
+
+Title1 (Spanish): Respuesta insuficiente
+Content (Spanish): Las medidas anunciadas por Pedro Sánchez ante el PSOE no cierran la crisis de credibilidad generada por el ‘caso Cerdán’
+
+Title2 (Spanish): El abuelo enterrado en el jardín
+Content (Spanish): A medida que Putin necesite a Stalin como héroe de la Segunda Guerra Mundial, irán apareciendo más estatuas suyas
+
+Title3 (Spanish): Las mujeres primero
+Content (Spanish): Creo en un cambio de sistema en el que nosotras tengamos voz para señalar el curso del mundo
+
+Title4 (Spanish): Incertidumbre
+Content (Spanish): Hace apenas dos siglos que los seres humanos adquirimos la conciencia de que en el plazo de nuestra existencia podíamos vivir en varios estadios históricos. Hoy todo se ha acelerado
+
+Title5 (Spanish): Por quién cantan las sirenas
+Content (Spanish): El delta de la Camarga, a menudo idealizado como un refugio natural salvaje, ha sido moldeado durante siglos por el ser humano para hacerlo habitable. Según una herramienta del IPCC, con un aumento de 2,5°C, gran parte del delta del Ródano quedaría sumergido. Localidades como Aigues-Mortes y Arlés estarían bajo el agua o junto al mar. Para comprender cómo enfrentan los habitantes este futuro incierto, el autor se adentra en sus vidas: personas arraigadas a tradiciones rurales, rebeldes, de caza y agricultura. A través de retratos y reflexiones poéticas, el texto retrata un territorio y a sus gentes ante la amenaza de desaparecer
+
+
+Translated Titles (English):
+==============================
+
+Translated Title1: Insufficient response
+Translated Title2: The grandfather buried in the garden
+Translated Title3: Women first
+Translated Title4: Uncertainty
+Translated Title5: For whom the sirens sing
+
+
+Repeated Words in Titles:
+==============================
+No Repeated Words in Titles
 
 
 📌 Author
