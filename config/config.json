@@ -1,9 +1,9 @@
 {
   "URL": "https://elpais.com/opinion/",
-  "API_KEY": "67b4acdd51mshe4ece67ac4d2db5p116965jsn0708742557af",
+  "API_KEY": "<your_rapidapi_key>",
   "API_HOST": "google-translate113.p.rapidapi.com",
   "API_URL": "https://google-translate113.p.rapidapi.com/api/v1/translator/text",
-  "REMOTE_URL": "https://renjithr_esEkuY:VyW1tTGegzEcKhKxgonV@hub-cloud.browserstack.com/wd/hub",
+  "REMOTE_URL": "https://<user_name>:<access_key>@hub-cloud.browserstack.com/wd/hub",
   "CAPABILITIES": {
     "windows": {
       "browserName": "Chrome",

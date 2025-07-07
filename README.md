@@ -13,7 +13,7 @@ This Robot Framework automation project performs end-to-end scraping, translatio
 ✔️ Configured for local execution & **parallel test execution** on [BrowserStack](https://www.browserstack.com/)
 
 ---
-## ✅ Features
+## ✅ Features	
 
 - 🌐 Opens El País Opinion section remotely on BrowserStack
 - 👁️ Handles cookie consent popup if it appears
@@ -42,7 +42,7 @@ Edit the file config/config.json:
   "API_KEY": "<your_rapidapi_key>",
   "API_HOST": "google-translate113.p.rapidapi.com",
   "API_URL": "https://google-translate113.p.rapidapi.com/api/v1/translator/text",
-  "REMOTE_URL": "https://<username>:<access_key>@hub-cloud.browserstack.com/wd/hub",
+  "REMOTE_URL": "https://<user_name>:<access_key>@hub-cloud.browserstack.com/wd/hub",
   "CAPABILITIES": {
     "browserName": "Chrome",
     "browserVersion": "latest",
