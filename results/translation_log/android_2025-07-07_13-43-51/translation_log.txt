@@ -1,0 +1,35 @@
+Translation log generated at 2025-07-07_13-43-51
+-----------------------------------------------
+
+First five articles in Opinion
+==============================
+
+Title1 (Spanish): Un PP atado a Vox
+Content (Spanish): Feijóo consigue que el congreso del popular cierre filas con él, pero su dependencia de la formación ultra contradice sus ansias centristas
+
+Title2 (Spanish): Respuesta insuficiente
+Content (Spanish): Las medidas anunciadas por Pedro Sánchez ante el PSOE no cierran la crisis de credibilidad generada por el ‘caso Cerdán’
+
+Title3 (Spanish): Un putero representa todos los errores de la historia
+Content (Spanish): La guerra, el imperialismo, el robo más sucio y la emergencia climática guardan un nexo común: la misoginia
+
+Title4 (Spanish): Nuestra mente está en guerra
+Content (Spanish): La insistencia en la necesidad del debate de ideas no es intelectualismo nostálgico, nos va la vida en ello
+
+Title5 (Spanish): Por quién cantan las sirenas
+Content (Spanish): El delta de la Camarga, a menudo idealizado como un refugio natural salvaje, ha sido moldeado durante siglos por el ser humano para hacerlo habitable. Según una herramienta del IPCC, con un aumento de 2,5°C, gran parte del delta del Ródano quedaría sumergido. Localidades como Aigues-Mortes y Arlés estarían bajo el agua o junto al mar. Para comprender cómo enfrentan los habitantes este futuro incierto, el autor se adentra en sus vidas: personas arraigadas a tradiciones rurales, rebeldes, de caza y agricultura. A través de retratos y reflexiones poéticas, el texto retrata un territorio y a sus gentes ante la amenaza de desaparecer
+
+
+Translated Titles (English):
+==============================
+
+Translated Title1: A PP tied to Vox
+Translated Title2: Insufficient response
+Translated Title3: A whore represents all the mistakes of history
+Translated Title4: Our mind is at war
+Translated Title5: For whom the sirens sing
+
+
+Repeated Words in Titles:
+==============================
+No Repeated Words in Titles

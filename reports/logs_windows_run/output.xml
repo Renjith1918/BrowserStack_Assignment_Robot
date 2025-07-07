@@ -1,0 +1,345 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 7.3.1 (Python 3.13.5 on win32)" generated="2025-07-07T13:42:40.651160" rpa="false" schemaversion="5">
+<suite id="s1" name="Run Parallel" source="C:\Users\reramana\Desktop\BrowserStack_Assignment_Robot\BrowserStack_Assignment_Robot\tests\run_parallel.robot">
+<kw name="Setup Suite" type="SETUP">
+<kw name="Set Suite Documentation" owner="BuiltIn">
+<msg time="2025-07-07T13:42:43.321419" level="INFO">Set suite documentation to:
+Testing on Windows - Chrome</msg>
+<arg>Testing on ${PLATFORM_DISPLAY}</arg>
+<doc>Sets documentation for the current test suite.</doc>
+<status status="PASS" start="2025-07-07T13:42:43.321048" elapsed="0.000465"/>
+</kw>
+<kw name="Launch Browser">
+<kw name="Log To Console" owner="BuiltIn">
+<arg>BrowserStack opening in ${PLATFORM_DISPLAY}...</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2025-07-07T13:42:43.322054" elapsed="0.000229"/>
+</kw>
+<kw name="Open Browser With Caps" owner="browser_manager">
+<msg time="2025-07-07T13:42:49.417160" level="INFO">C:\Users\reramana\Desktop\BrowserStack_Assignment_Robot\BrowserStack_Assignment_Robot\.venv\Lib\site-packages\selenium\webdriver\remote\remote_connection.py:418: UserWarning: Embedding username and password in URL could be insecure, use ClientConfig instead
+  headers = self.get_remote_connection_headers(parsed_url, self._client_config.keep_alive)</msg>
+<arg>${REMOTE_URL}</arg>
+<arg>${CAPABILITIES}</arg>
+<status status="PASS" start="2025-07-07T13:42:43.322409" elapsed="6.094891"/>
+</kw>
+<kw name="Run Keyword And Return Status" owner="BuiltIn">
+<kw name="Should Contain" owner="BuiltIn">
+<msg time="2025-07-07T13:42:49.417772" level="FAIL">'{"browserName": "Chrome", "browserVersion": "latest", "bstack:options": {"os": "Windows", "osVersion": "10", "buildName": "ElPais Suite", "sessionName": "ElPais Windows Chrome Test"}}' does not contain 'deviceName'</msg>
+<arg>${CAPABILITIES}</arg>
+<arg>deviceName</arg>
+<doc>Fails if ``container`` does not contain ``item`` one or more times.</doc>
+<status status="FAIL" start="2025-07-07T13:42:49.417603" elapsed="0.000278">'{"browserName": "Chrome", "browserVersion": "latest", "bstack:options": {"os": "Windows", "osVersion": "10", "buildName": "ElPais Suite", "sessionName": "ElPais Windows Chrome Test"}}' does not contain 'deviceName'</status>
+</kw>
+<msg time="2025-07-07T13:42:49.417976" level="INFO">${is_mobile} = False</msg>
+<var>${is_mobile}</var>
+<arg>Should Contain</arg>
+<arg>${CAPABILITIES}</arg>
+<arg>deviceName</arg>
+<doc>Runs the given keyword with given arguments and returns the status as a Boolean value.</doc>
+<status status="PASS" start="2025-07-07T13:42:49.417463" elapsed="0.000533"/>
+</kw>
+<if>
+<branch type="IF" condition="not ${is_mobile}">
+<kw name="Maximize Browser Window" owner="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" start="2025-07-07T13:42:49.418244" elapsed="0.361206"/>
+</kw>
+<status status="PASS" start="2025-07-07T13:42:49.418074" elapsed="0.361454"/>
+</branch>
+<status status="PASS" start="2025-07-07T13:42:49.418052" elapsed="0.361528"/>
+</if>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2025-07-07T13:42:54.780233" level="INFO">Slept 5 seconds.</msg>
+<arg>5s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2025-07-07T13:42:49.779686" elapsed="5.000659"/>
+</kw>
+<status status="PASS" start="2025-07-07T13:42:43.321839" elapsed="11.458601"/>
+</kw>
+<status status="PASS" start="2025-07-07T13:42:43.320075" elapsed="11.460427"/>
+</kw>
+<test id="s1-t1" name="Run El Pais Test on BrowserStack" line="42">
+<kw name="Run El Pais Test Steps">
+<kw name="Navigate To Opinion Section" owner="scraper">
+<msg time="2025-07-07T13:42:54.781340" level="INFO">Opening url 'https://elpais.com/opinion/'</msg>
+<msg time="2025-07-07T13:43:01.713171" level="INFO">Clicking element 'xpath=//*[@id='didomi-notice-agree-button']'.</msg>
+<msg time="2025-07-07T13:43:05.629010" level="INFO">${soup} = &lt;html lang="es-ES"&gt;&lt;head class="at-element-marker"&gt;&lt;script async="" src="https://content.zeotap.com/sdk/idp.min.js" type="text/javascript"&gt;&lt;/script&gt;&lt;script async="" src="https://securepubads.g.doublec...</msg>
+<var>${soup}</var>
+<arg>${URL}</arg>
+<status status="PASS" start="2025-07-07T13:42:54.781231" elapsed="10.848167"/>
+</kw>
+<kw name="Fetch Top Articles" owner="scraper">
+<msg time="2025-07-07T13:43:05.633146" level="INFO">${articles} = [{'title': 'Un PP atado a Vox', 'content': 'Feijóo consigue que el congreso del popular cierre filas con él, pero su dependencia de la formación ultra contradice sus ansias centristas', 'image_url': N...</msg>
+<var>${articles}</var>
+<arg>${soup}</arg>
+<arg>5</arg>
+<status status="PASS" start="2025-07-07T13:43:05.630299" elapsed="0.002887"/>
+</kw>
+<kw name="Print Articles In Spanish" owner="scraper">
+<msg time="2025-07-07T13:43:05.633433" level="INFO">Un PP atado a Vox
+Feijóo consigue que el congreso del popular cierre filas con él, pero su dependencia de la formación ultra contradice sus ansias centristas
+
+Respuesta insuficiente
+Las medidas anunciadas por Pedro Sánchez ante el PSOE no cierran la crisis de credibilidad generada por el ‘caso Cerdán’
+
+Un putero representa todos los errores de la historia
+La guerra, el imperialismo, el robo más sucio y la emergencia climática guardan un nexo común: la misoginia
+
+Nuestra mente está en guerra
+La insistencia en la necesidad del debate de ideas no es intelectualismo nostálgico, nos va la vida en ello
+
+Por quién cantan las sirenas
+El delta de la Camarga, a menudo idealizado como un refugio natural salvaje, ha sido moldeado durante siglos por el ser humano para hacerlo habitable. Según una herramienta del IPCC, con un aumento de 2,5°C, gran parte del delta del Ródano quedaría sumergido. Localidades como Aigues-Mortes y Arlés estarían bajo el agua o junto al mar. Para comprender cómo enfrentan los habitantes este futuro incierto, el autor se adentra en sus vidas: personas arraigadas a tradiciones rurales, rebeldes, de caza y agricultura. A través de retratos y reflexiones poéticas, el texto retrata un territorio y a sus gentes ante la amenaza de desaparecer</msg>
+<arg>${articles}</arg>
+<status status="PASS" start="2025-07-07T13:43:05.633294" elapsed="0.000187"/>
+</kw>
+<kw name="Download Cover Images" owner="scraper">
+<arg>${articles}</arg>
+<arg>${PLATFORM}</arg>
+<arg>${TIMESTAMP}</arg>
+<status status="PASS" start="2025-07-07T13:43:05.633556" elapsed="0.594619"/>
+</kw>
+<kw name="Translate Article Titles" owner="scraper">
+<msg time="2025-07-07T13:43:11.461296" level="INFO">${translated} = [{'title': 'Un PP atado a Vox', 'content': 'Feijóo consigue que el congreso del popular cierre filas con él, pero su dependencia de la formación ultra contradice sus ansias centristas', 'image_url': N...</msg>
+<var>${translated}</var>
+<arg>${articles}</arg>
+<status status="PASS" start="2025-07-07T13:43:06.228532" elapsed="5.232835"/>
+</kw>
+<kw name="Analyze Repeated Words In Titles" owner="scraper">
+<msg time="2025-07-07T13:43:11.462994" level="INFO">${repeated} = {}</msg>
+<var>${repeated}</var>
+<arg>${translated}</arg>
+<status status="PASS" start="2025-07-07T13:43:11.461543" elapsed="0.001489"/>
+</kw>
+<kw name="Log Translation Results" owner="scraper">
+<msg time="2025-07-07T13:43:11.465298" level="INFO">
+--- Translation Log for windows ---
+Translation log generated at 2025-07-07_13-43-11
+-----------------------------------------------
+
+First five articles in Opinion
+==============================
+
+Title1 (Spanish): Un PP atado a Vox
+Content (Spanish): Feijóo consigue que el congreso del popular cierre filas con él, pero su dependencia de la formación ultra contradice sus ansias centristas
+
+Title2 (Spanish): Respuesta insuficiente
+Content (Spanish): Las medidas anunciadas por Pedro Sánchez ante el PSOE no cierran la crisis de credibilidad generada por el ‘caso Cerdán’
+
+Title3 (Spanish): Un putero representa todos los errores de la historia
+Content (Spanish): La guerra, el imperialismo, el robo más sucio y la emergencia climática guardan un nexo común: la misoginia
+
+Title4 (Spanish): Nuestra mente está en guerra
+Content (Spanish): La insistencia en la necesidad del debate de ideas no es intelectualismo nostálgico, nos va la vida en ello
+
+Title5 (Spanish): Por quién cantan las sirenas
+Content (Spanish): El delta de la Camarga, a menudo idealizado como un refugio natural salvaje, ha sido moldeado durante siglos por el ser humano para hacerlo habitable. Según una herramienta del IPCC, con un aumento de 2,5°C, gran parte del delta del Ródano quedaría sumergido. Localidades como Aigues-Mortes y Arlés estarían bajo el agua o junto al mar. Para comprender cómo enfrentan los habitantes este futuro incierto, el autor se adentra en sus vidas: personas arraigadas a tradiciones rurales, rebeldes, de caza y agricultura. A través de retratos y reflexiones poéticas, el texto retrata un territorio y a sus gentes ante la amenaza de desaparecer
+
+
+Translated Titles (English):
+==============================
+
+Translated Title1: A PP tied to Vox
+Translated Title2: Insufficient response
+Translated Title3: A whore represents all the mistakes of history
+Translated Title4: Our mind is at war
+Translated Title5: For whom the sirens sing
+
+
+Repeated Words in Titles:
+==============================
+No Repeated Words in Titles</msg>
+<arg>${translated}</arg>
+<arg>${repeated}</arg>
+<arg>${PLATFORM}</arg>
+<arg>${TIMESTAMP}</arg>
+<status status="PASS" start="2025-07-07T13:43:11.463145" elapsed="0.002332"/>
+</kw>
+<status status="PASS" start="2025-07-07T13:42:54.781034" elapsed="16.684531"/>
+</kw>
+<kw name="Set Test Documentation" owner="BuiltIn">
+<msg time="2025-07-07T13:43:11.465855" level="INFO">Set test documentation to:
+✅ Test completed on Windows - Chrome</msg>
+<arg>✅ Test completed on ${PLATFORM_DISPLAY}</arg>
+<doc>Sets documentation for the current test case.</doc>
+<status status="PASS" start="2025-07-07T13:43:11.465678" elapsed="0.000219"/>
+</kw>
+<kw name="Set BrowserStack Status" type="TEARDOWN">
+<kw name="Run Keyword And Ignore Error" owner="BuiltIn">
+<kw name="Run El Pais Test Steps">
+<kw name="Navigate To Opinion Section" owner="scraper">
+<msg time="2025-07-07T13:43:11.466673" level="INFO">Opening url 'https://elpais.com/opinion/'</msg>
+<msg time="2025-07-07T13:43:29.193299" level="WARN">Consent button not clickable: Element 'xpath=//*[@id='didomi-notice-agree-button']' not visible after 10 seconds.</msg>
+<msg time="2025-07-07T13:43:31.530679" level="INFO">${soup} = &lt;html lang="es-ES"&gt;&lt;head class="at-element-marker"&gt;&lt;script src="https://yield-op-idsync.live.streamtheworld.com/idsync.js?stn=OMNY_LASNOTICIASDEELPAS&amp;amp;gdpr=1&amp;amp;gdpr_consent=CQULowAQULowAAHABBENBx...</msg>
+<var>${soup}</var>
+<arg>${URL}</arg>
+<status status="PASS" start="2025-07-07T13:43:11.466583" elapsed="20.064181"/>
+</kw>
+<kw name="Fetch Top Articles" owner="scraper">
+<msg time="2025-07-07T13:43:31.532936" level="INFO">${articles} = [{'title': 'Un PP atado a Vox', 'content': 'Feijóo consigue que el congreso del popular cierre filas con él, pero su dependencia de la formación ultra contradice sus ansias centristas', 'image_url': N...</msg>
+<var>${articles}</var>
+<arg>${soup}</arg>
+<arg>5</arg>
+<status status="PASS" start="2025-07-07T13:43:31.530926" elapsed="0.002041"/>
+</kw>
+<kw name="Print Articles In Spanish" owner="scraper">
+<msg time="2025-07-07T13:43:31.533175" level="INFO">Un PP atado a Vox
+Feijóo consigue que el congreso del popular cierre filas con él, pero su dependencia de la formación ultra contradice sus ansias centristas
+
+Respuesta insuficiente
+Las medidas anunciadas por Pedro Sánchez ante el PSOE no cierran la crisis de credibilidad generada por el ‘caso Cerdán’
+
+Un putero representa todos los errores de la historia
+La guerra, el imperialismo, el robo más sucio y la emergencia climática guardan un nexo común: la misoginia
+
+Nuestra mente está en guerra
+La insistencia en la necesidad del debate de ideas no es intelectualismo nostálgico, nos va la vida en ello
+
+Por quién cantan las sirenas
+El delta de la Camarga, a menudo idealizado como un refugio natural salvaje, ha sido moldeado durante siglos por el ser humano para hacerlo habitable. Según una herramienta del IPCC, con un aumento de 2,5°C, gran parte del delta del Ródano quedaría sumergido. Localidades como Aigues-Mortes y Arlés estarían bajo el agua o junto al mar. Para comprender cómo enfrentan los habitantes este futuro incierto, el autor se adentra en sus vidas: personas arraigadas a tradiciones rurales, rebeldes, de caza y agricultura. A través de retratos y reflexiones poéticas, el texto retrata un territorio y a sus gentes ante la amenaza de desaparecer</msg>
+<arg>${articles}</arg>
+<status status="PASS" start="2025-07-07T13:43:31.533063" elapsed="0.000155"/>
+</kw>
+<kw name="Download Cover Images" owner="scraper">
+<arg>${articles}</arg>
+<arg>${PLATFORM}</arg>
+<arg>${TIMESTAMP}</arg>
+<status status="PASS" start="2025-07-07T13:43:31.533282" elapsed="0.528294"/>
+</kw>
+<kw name="Translate Article Titles" owner="scraper">
+<msg time="2025-07-07T13:43:37.389096" level="INFO">${translated} = [{'title': 'Un PP atado a Vox', 'content': 'Feijóo consigue que el congreso del popular cierre filas con él, pero su dependencia de la formación ultra contradice sus ansias centristas', 'image_url': N...</msg>
+<var>${translated}</var>
+<arg>${articles}</arg>
+<status status="PASS" start="2025-07-07T13:43:32.061760" elapsed="5.327419"/>
+</kw>
+<kw name="Analyze Repeated Words In Titles" owner="scraper">
+<msg time="2025-07-07T13:43:37.390325" level="INFO">${repeated} = {}</msg>
+<var>${repeated}</var>
+<arg>${translated}</arg>
+<status status="PASS" start="2025-07-07T13:43:37.389415" elapsed="0.000968"/>
+</kw>
+<kw name="Log Translation Results" owner="scraper">
+<msg time="2025-07-07T13:43:37.392029" level="INFO">
+--- Translation Log for windows ---
+Translation log generated at 2025-07-07_13-43-37
+-----------------------------------------------
+
+First five articles in Opinion
+==============================
+
+Title1 (Spanish): Un PP atado a Vox
+Content (Spanish): Feijóo consigue que el congreso del popular cierre filas con él, pero su dependencia de la formación ultra contradice sus ansias centristas
+
+Title2 (Spanish): Respuesta insuficiente
+Content (Spanish): Las medidas anunciadas por Pedro Sánchez ante el PSOE no cierran la crisis de credibilidad generada por el ‘caso Cerdán’
+
+Title3 (Spanish): Un putero representa todos los errores de la historia
+Content (Spanish): La guerra, el imperialismo, el robo más sucio y la emergencia climática guardan un nexo común: la misoginia
+
+Title4 (Spanish): Nuestra mente está en guerra
+Content (Spanish): La insistencia en la necesidad del debate de ideas no es intelectualismo nostálgico, nos va la vida en ello
+
+Title5 (Spanish): Por quién cantan las sirenas
+Content (Spanish): El delta de la Camarga, a menudo idealizado como un refugio natural salvaje, ha sido moldeado durante siglos por el ser humano para hacerlo habitable. Según una herramienta del IPCC, con un aumento de 2,5°C, gran parte del delta del Ródano quedaría sumergido. Localidades como Aigues-Mortes y Arlés estarían bajo el agua o junto al mar. Para comprender cómo enfrentan los habitantes este futuro incierto, el autor se adentra en sus vidas: personas arraigadas a tradiciones rurales, rebeldes, de caza y agricultura. A través de retratos y reflexiones poéticas, el texto retrata un territorio y a sus gentes ante la amenaza de desaparecer
+
+
+Translated Titles (English):
+==============================
+
+Translated Title1: A PP tied to Vox
+Translated Title2: Insufficient response
+Translated Title3: A whore represents all the mistakes of history
+Translated Title4: Our mind is at war
+Translated Title5: For whom the sirens sing
+
+
+Repeated Words in Titles:
+==============================
+No Repeated Words in Titles</msg>
+<arg>${translated}</arg>
+<arg>${repeated}</arg>
+<arg>${PLATFORM}</arg>
+<arg>${TIMESTAMP}</arg>
+<status status="PASS" start="2025-07-07T13:43:37.390594" elapsed="0.001613"/>
+</kw>
+<status status="PASS" start="2025-07-07T13:43:11.466422" elapsed="25.925925"/>
+</kw>
+<msg time="2025-07-07T13:43:37.392482" level="INFO">${rc} = PASS</msg>
+<msg time="2025-07-07T13:43:37.392522" level="INFO">${msg} = None</msg>
+<var>${rc}</var>
+<var>${msg}</var>
+<arg>Run El Pais Test Steps</arg>
+<doc>Runs the given keyword with the given arguments and ignores possible error.</doc>
+<status status="PASS" start="2025-07-07T13:43:11.466286" elapsed="25.926259"/>
+</kw>
+<kw name="Set Suite Variable" owner="BuiltIn">
+<msg time="2025-07-07T13:43:37.392882" level="INFO">${TEST STATUS} = PASS</msg>
+<arg>${TEST STATUS}</arg>
+<arg>${rc}</arg>
+<doc>Makes a variable available everywhere within the scope of the current suite.</doc>
+<status status="PASS" start="2025-07-07T13:43:37.392678" elapsed="0.000238"/>
+</kw>
+<kw name="Set Suite Variable" owner="BuiltIn">
+<msg time="2025-07-07T13:43:37.393132" level="INFO">${TEST MESSAGE} = None</msg>
+<arg>${TEST MESSAGE}</arg>
+<arg>${msg}</arg>
+<doc>Makes a variable available everywhere within the scope of the current suite.</doc>
+<status status="PASS" start="2025-07-07T13:43:37.393003" elapsed="0.000159"/>
+</kw>
+<kw name="Set Variable If" owner="BuiltIn">
+<msg time="2025-07-07T13:43:37.393435" level="INFO">${status} = passed</msg>
+<var>${status}</var>
+<arg>'${rc}' == 'PASS'</arg>
+<arg>passed</arg>
+<arg>failed</arg>
+<doc>Sets variable based on the given condition.</doc>
+<status status="PASS" start="2025-07-07T13:43:37.393249" elapsed="0.000318"/>
+</kw>
+<kw name="Set Variable If" owner="BuiltIn">
+<msg time="2025-07-07T13:43:37.393833" level="INFO">${reason} = El Pais test completed successfully</msg>
+<var>${reason}</var>
+<arg>'${rc}' == 'PASS'</arg>
+<arg>El Pais test completed successfully</arg>
+<arg>El Pais test failed at some step</arg>
+<doc>Sets variable based on the given condition.</doc>
+<status status="PASS" start="2025-07-07T13:43:37.393692" elapsed="0.000162"/>
+</kw>
+<kw name="Mark Test Status On BrowserStack" owner="browser_manager">
+<msg time="2025-07-07T13:43:37.799573" level="INFO">✅ BrowserStack status updated: passed - El Pais test completed successfully</msg>
+<arg>${status}</arg>
+<arg>${reason}</arg>
+<status status="PASS" start="2025-07-07T13:43:37.393927" elapsed="0.405730"/>
+</kw>
+<kw name="Run Keyword If" owner="BuiltIn">
+<arg>'${rc}' != 'PASS'</arg>
+<arg>Fail</arg>
+<arg>${msg}</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="PASS" start="2025-07-07T13:43:37.799807" elapsed="0.000195"/>
+</kw>
+<status status="PASS" start="2025-07-07T13:43:11.466090" elapsed="26.333988"/>
+</kw>
+<doc>✅ Test completed on Windows - Chrome</doc>
+<status status="PASS" start="2025-07-07T13:42:54.780572" elapsed="43.019559"/>
+</test>
+<kw name="Close Browser" owner="SeleniumLibrary" type="TEARDOWN">
+<doc>Closes the current browser.</doc>
+<status status="PASS" start="2025-07-07T13:43:37.800622" elapsed="1.456115"/>
+</kw>
+<doc>Testing on Windows - Chrome</doc>
+<status status="PASS" start="2025-07-07T13:42:40.653087" elapsed="58.603733"/>
+</suite>
+<statistics>
+<total>
+<stat pass="1" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat name="Run Parallel" id="s1" pass="1" fail="0" skip="0">Run Parallel</stat>
+</suite>
+</statistics>
+<errors>
+<msg time="2025-07-07T13:43:29.193299" level="WARN">Consent button not clickable: Element 'xpath=//*[@id='didomi-notice-agree-button']' not visible after 10 seconds.</msg>
+</errors>
+</robot>
