@@ -1,30 +1,24 @@
 *** Settings ***
-Library    SeleniumLibrary
-Library    ../utils/scraper.py
-Variables  ../config/config_reader.py
-Variables  ../config/robot_variables.py
+Library           SeleniumLibrary
+Library           ../utils/browser_manager.py
+Library           ../utils/scraper.py
+Variables         ../config/robot_variables.py
+Suite Setup       Setup Suite
+Suite Teardown    Close Browser
+
+*** Keywords ***
+Setup Suite
+    Set Suite Documentation    Testing on ${PLATFORM_DISPLAY}
+    Launch Browser
 
 *** Test Cases ***
-Open El Pais On BrowserStack
-    [Documentation]    Open El Pais, click Accept if present, scrape & translate articles, close browser
-#    Create Webdriver  Remote  command_executor=${REMOTE_URL}  desired_capabilities=${CAPABILITIES}  selenium_options=None
-#
-#    Maximize Browser Window
-#    Sleep    2s
-#    ${is_visible}=    Run Keyword And Return Status    Element Should Be Visible    //button[@id='didomi-notice-agree-button']
-#    Run Keyword If    ${is_visible}    Click Element    //button[@id='didomi-notice-agree-button']
-#    ${articles}    ${repeats}=    Scrape And Translate Articles
-#    Log    ${articles}
-#    Log    ${repeats}
-#    Close Browser
-    Set Test Documentation     El Pais Opinion Test on ${PLATFORM_DISPLAY}
+Run El Pais Test Locally
+    [Documentation]    Runs test locally on default browser
     ${soup}=    Navigate To Opinion Section    ${URL}
     ${articles}=    Fetch Top Articles    ${soup}    5
     Print Articles In Spanish    ${articles}
-    Download Cover Images    ${articles}    ${PLATFORM}    ${TIMESTAMP}
+    Download Cover Images    ${articles}    Local    ${TIMESTAMP}
     ${translated}=    Translate Article Titles    ${articles}
     ${repeated}=    Analyze Repeated Words In Titles    ${translated}
-    Log Translation Results    ${translated}    ${repeated}    ${PLATFORM}    ${TIMESTAMP}
-#    ${report_path}=    Save Reports Folder    ${platform}
+    Log Translation Results    ${translated}    ${repeated}    Local    ${TIMESTAMP}
     Set Test Documentation     ✅ Test completed on ${PLATFORM_DISPLAY}
-
